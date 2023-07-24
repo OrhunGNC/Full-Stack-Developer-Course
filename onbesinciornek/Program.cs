@@ -76,7 +76,42 @@ namespace onbesinciornek
                 }
                 else if (transport == '3')
                 {
+                    Console.Write("\nOtobüste Aylık Var mı? ");
+                    string monthlybus= Console.ReadLine();
+                    if (monthlybus=="Evet" || monthlybus=="EVET"|| monthlybus == "evet")
+                    {
+                        Console.WriteLine("\nAylık Ücreti 140TL'dir.");
+                        Console.WriteLine("\nAylık Basım Limitiniz: 200");
+                        Console.Write("\nGünde Kaç Sefer Yolculuk Yaptınız? ");
+                        int daily=Convert.ToInt32(Console.ReadLine());
+                        int monthly= daily*30;
+                        int kalanhak = 200 - monthly;
+                        if (kalanhak>=0 && kalanhak <= 20)
+                        {
+                            Console.WriteLine("\nÖdemeniz Gereken Tutar: 110TL");
+                            Console.WriteLine("\nİade Tutarı:"+(140-110));
+                        }
+                        else if (kalanhak>20 && kalanhak <= 40)
+                        {
+                            Console.WriteLine("\nÖdemeniz Gereken Tutar: 90TL");
+                            Console.WriteLine("\nİade Tutarı:" + (140 - 90));
+                        }
+                        else if (kalanhak < 0)
+                        {
+                            Console.WriteLine("\nKullanım limitinizi aştınız!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nİade Bulunmamaktadır.");
+                            Console.WriteLine("\nÖdemeniz Gereken Tutar: 140TL");
+                        }
 
+
+                    }
+                    else
+                    {
+                        
+                    }
                 }
 
             }
